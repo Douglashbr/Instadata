@@ -3,7 +3,7 @@ const instadata = async ({name, quantity}, callback) => {
     const request = new Request(`https://instagram.com/${name}/?__a=1`);
 
     if (quantity > 0 && quantity <= 12){
-        fetch(request)
+        fetch(request, { mode: 'no-cors' })
         .then(response => {
             response.json()
             .then(response => {
